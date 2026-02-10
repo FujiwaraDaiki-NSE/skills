@@ -1,0 +1,4 @@
+interface:
+  display_name: "Arc Default Credential Compose"
+  short_description: "Azure Arc Managed Identity をコンテナで使う docker-compose 設定を整理"
+  default_prompt: "Azure Arc の DefaultAzureCredential をコンテナで使うため、docker-compose.yaml の設定（extra_hosts、/var/opt/azcmagent マウント、IMDS/IDENTITY エンドポイント等）を作成・更新して。"
