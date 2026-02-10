@@ -31,11 +31,11 @@ Azure Arc の Managed Identity を Docker コンテナ内の `DefaultAzureCreden
 
 以下を必ず確認する。
 
-- このスキルは **コンテナ側のみ** を扱う。ホスト側（HIMDS 中継、iptables/ufw、Arc 接続確認など）はユーザーに確認するだけにとどめる。
+- このスキルは **コンテナ側のみ** を扱う。ただし、ユーザーに聞かれた場合はホスト側（HIMDS 中継、iptables/ufw、Arc 接続確認など）の手順を説明できるようにしておく。実作業や変更指示はユーザー判断に委ねる。
 - 既存の compose で `IMDS_ENDPOINT` / `IDENTITY_ENDPOINT` を別値にしている場合は、Arc の中継先（通常 `http://host.docker.internal:40442`）へ揃える。
 - `host.docker.internal` が効かない Docker では `extra_hosts` が必須。
 - `DefaultAzureCredential` で接続文字列を優先させたくない場合は `AZURE_BLOB_CONNECTION_STRING` を空文字で上書きする。
 
 ## References
 
-Compose の具体例は `arc-default-credential-compose/references/compose-snippets.md` を参照する。
+Compose の具体例は `arc-default-credential-compose/references/compose-snippets.md` を参照する。ホスト側の手順やつまずきポイントを聞かれた場合は `arc-default-credential-compose/references/host-setup.md` を参照する。
